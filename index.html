@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>保護者向けAI相談コマンド　TYPE:共感</title>
 
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      text-align: center;
+      background: #f7f7f7;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .command {
+      text-align: left;
+      background: #f1f1f1;
+      padding: 15px;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      margin: 20px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>保護者向けAI相談コマンド　TYPE:共感</h1>
+
+    <p>下のボタンを押すとコマンドをコピーできます。</p>
+
+    <div class="command" id="command">
+ここにあなたが作ったコマンドを入れる
+    </div>
+
+    <button onclick="copyCommand()">
+      📋 コマンドをコピーする
+    </button>
+
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function copyCommand() {
+      const command = document.getElementById("command").innerText;
+
+      navigator.clipboard.writeText(command).then(() => {
+        document.getElementById("message").textContent =
+          "✅ コピーしました！AIに貼り付けて使ってください。";
+      });
+    }
+  </script>
+
+</body>
+</html>
